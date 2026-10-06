@@ -16,4 +16,4 @@ images:
   - name: ghcr.io/oluonabiyi/zuriapp-backend
     newTag: sha-37d10a8
   - name: ghcr.io/oluonabiyi/zuriapp-frontend
-    newTag: sha-fc0e39f
+    newTag: sha-52fadd3
