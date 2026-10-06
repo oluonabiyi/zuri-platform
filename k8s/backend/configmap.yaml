@@ -1,0 +1,10 @@
+# Non-secret settings for the backend
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: zuri
+data:
+  PORT: "5000"
+  STORE_NAME: "Zuri Market"
+  NODE_ENV: "production"

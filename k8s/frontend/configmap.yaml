@@ -1,0 +1,20 @@
+# nginx config for the frontend, kept outside the image so routing can change without a rebuild
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-nginx
+  namespace: zuri
+data:
+  default.conf: |
+    server {
+      listen 8080;
+      root /usr/share/nginx/html;
+      index index.html;
+      location /api/ {
+        proxy_pass http://backend:5000;
+        proxy_set_header Host $host;
+      }
+      location / {
+        try_files $uri /index.html;
+      }
+    }

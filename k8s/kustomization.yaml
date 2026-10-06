@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - namespace.yaml
+  - rbac.yaml
+  - backend/configmap.yaml
+  - backend/externalsecret.yaml
+  - backend/deployment.yaml
+  - backend/service.yaml
+  - frontend/configmap.yaml
+  - frontend/deployment.yaml
+  - frontend/service.yaml
+  - ingress.yaml
+# The image tags CI pushed. Updating these lines (in a PR) is how a new version is deployed.
+images:
+  - name: ghcr.io/oluonabiyi/zuriapp-backend
+    newTag: sha-37d10a8
+  - name: ghcr.io/oluonabiyi/zuriapp-frontend
+    newTag: sha-fc0e39f

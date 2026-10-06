@@ -1,0 +1,26 @@
+# Traefik (built into k3s) routes /api to the backend and everything else to the frontend.
+# /metrics is deliberately NOT routed, so metrics stay inside the cluster.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zuri
+  namespace: zuri
+spec:
+  ingressClassName: traefik
+  rules:
+    - http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: backend
+                port:
+                  number: 5000
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 8080
