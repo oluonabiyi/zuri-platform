@@ -1,0 +1,14 @@
+# kube-prometheus-stack settings sized for one small node
+alertmanager:
+  enabled: false # not required for the capstone; saves memory
+prometheus:
+  prometheusSpec:
+    retention: 3d
+    # Pick up ServiceMonitors from any namespace, not only ones labelled for this Helm release
+    serviceMonitorSelectorNilUsesHelmValues: false
+    resources:
+      requests: { cpu: 100m, memory: 400Mi }
+grafana:
+  sidecar:
+    dashboards:
+      enabled: true # loads dashboards from ConfigMaps labelled grafana_dashboard: "1"
