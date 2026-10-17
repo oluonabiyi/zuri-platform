@@ -2,7 +2,7 @@
 
 A secure, automated and observable delivery platform for **Zuri Market**, a two-service e-commerce app (Express API + React storefront). It replaces manual SSH deployments with a Git-driven process: every change goes through a pull request, automated checks and a recorded rollout to Kubernetes on AWS.
 
-**Live store:** http://35.178.115.47 &nbsp;·&nbsp; 2026 April DevOps Cohort capstone
+**Live store:** http://18.170.217.65 &nbsp;·&nbsp; 2026 April DevOps Cohort capstone
 
 | Repository | Purpose |
 | --- | --- |
