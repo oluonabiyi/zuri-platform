@@ -4,6 +4,8 @@ A secure, automated and observable delivery platform for **Zuri Market**, a two-
 
 **Live store:** http://18.170.217.65 &nbsp;·&nbsp; 2026 April DevOps Cohort capstone
 
+All changes to main go through a reviewed pull request; direct pushes are blocked.
+
 | Repository | Purpose |
 | --- | --- |
 | [zuriapp-backend](https://github.com/oluonabiyi/zuriapp-backend) | Express API, Dockerfile, CI pipeline |
